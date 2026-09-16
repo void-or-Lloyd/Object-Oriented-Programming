@@ -1,4 +1,4 @@
-import Product from "./product.js";
+import Product from "./product.js"
 
 export default class ShoppingCart {
     private _products: Product[] = []
