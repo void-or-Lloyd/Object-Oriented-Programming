@@ -26,4 +26,6 @@ export default class Book {
     return(): void {
         this._availability = true
     }
+
+    idCorrection(newId: number): void {this._id = newId}
 }

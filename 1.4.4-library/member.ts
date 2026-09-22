@@ -27,9 +27,21 @@ export default class Member {
             console.error("No books to return!")
             return
         }
+
+        let borrowedByYou = false
+        for (const i of this._borrowedBooks) {
+            if (i.id == id) borrowedByYou = true
+        }
+        if (!borrowedByYou) {
+            console.error("You have not borrowed this book!")    
+            return
+        }
+
         else for (let i = this._borrowedBooks.length; i > 0; i--) {
             let mi = i - 1
-            if (this._borrowedBooks[mi]!.id == id) this._borrowedBooks.splice(mi, 1)
+            this._borrowedBooks.splice(mi, 1) 
         }
     }
+
+    idCorrection(newId: number): void {this._id = newId}
 }
